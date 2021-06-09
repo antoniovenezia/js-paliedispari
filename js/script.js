@@ -1,6 +1,7 @@
+var test = document.getElementById("test");
+
 // PALINDROME TEST
 var wordUser = prompt("Inserisci una parola PALINDROMA!");
-var test = document.getElementById("test");
 
 function palindrome(str) {
     var reversed = str.split("").reverse().join("");
@@ -14,48 +15,42 @@ test.innerHTML = "La parola inserita è Palindroma? " + palindrome(wordUser);
 
 // PARI E DISPARI
 
-// Funzioni
-function num(min, max) {
-    var result = Math.floor(Math.random() * (max - min + 1) + min);
-    return result;
-}
-
-function isPari(num) {
-    if (num % 2 === 0) {
-        return "pari";
-        
-    } else {
-        return "dispari";
-    }
-}
-
-
-
-// Variabili
-var wordUser = prompt("Pari o Dispari?");
-console.log(wordUser);
-
+var pariDispari = prompt("Pari o Dispari?");
 
 var numberUser = prompt("Scegli un numero da 1 a 5");
 console.log(numberUser);
 
+function isPari (num1){
+    if (num1 % 2 === 0){
+        return "Pari";
+    } else {
+        return "Dispari";
+    }
+}
+var pariDispariUser = isPari(numberUser);
 
-var numPc = num(1, 5);
+
+
+function num1(min, max) {
+    var result = Math.floor(Math.random() * (max - min + 1) + min);
+    return result;
+}
+
+var numPc = num1(1, 5);
 console.log(numPc);
 
-
-var resultSum = parseInt(numberUser) + parseInt(numPc);
-console.log(resultSum);
-
+var somma = parseInt(numberUser) + parseInt(numPc);
+console.log(somma);
 
 
 
-// IF
-if (isPari(resultSum) && wordUser === "Pari") {
-    test.innerHTML += "\nNell'esercizio del Pari o Dispari l'utente ha vinto";
+if (isPari(somma) === pariDispari) {
+    test.innerHTML += "\nNel gioco del P o D: Hai vinto!"
 } else {
-    test.innerHTML += "\nNell'esercizio del Pari o Dispari l'utente ha perso";
+    test.innerHTML += "\nNel gioco del P o D: Hai perso!"
 }
+
+
 
 
 
