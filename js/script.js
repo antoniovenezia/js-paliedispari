@@ -15,16 +15,27 @@ test.innerHTML = "La parola inserita è Palindroma? " + palindrome(wordUser);
 
 // PARI E DISPARI
 
-var pariDispari = prompt("Pari o Dispari?");
+var pariDispari = prompt("Pari o Dispari?").toLowerCase();
+console.log(pariDispari);
+
+while (pariDispari !== "pari" && pariDispari !== "dispari"){
+    alert("Attenzione! Devi scegliere o pari o dispari!");
+    pariDispari = prompt("Pari o Dispari?").toLowerCase();
+}
+
 
 var numberUser = prompt("Scegli un numero da 1 a 5");
 console.log(numberUser);
+while (isNaN(numberUser) || numberUser < 1 || numberUser > 5){
+    alert("Attenzione! Devi inserire un numero compreso tra 1 e 5!");
+    numberUser = prompt("Scegli un numero da 1 a 5");
+}
 
 function isPari (num1){
     if (num1 % 2 === 0){
-        return "Pari";
+        return "pari";
     } else {
-        return "Dispari";
+        return "dispari";
     }
 }
 var pariDispariUser = isPari(numberUser);
